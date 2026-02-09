@@ -1,0 +1,28 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/ble/ble_app.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/ble/ble_app_gap.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/ble/ble_app_gatt.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/wifi/wifi_app.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/nvs/nvs_app.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/mqtt/mqtt_app.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ASW/gpio/gpio_app.c"
+    INCLUDE_DIRS
+        "../main"
+        "../ASW/ble"
+        "../ASW/wifi"
+        "../ASW/nvs"
+        "../ASW/mqtt"
+        "../ASW/gpio"
+    PRIV_INCLUDE_DIRS
+        "$ENV{IDF_PATH}/examples/bluetooth/nimble/common/nimble_peripheral_utils"
+    REQUIRES
+        bt
+        esp_wifi
+        nvs_flash
+        mqtt
+        console
+        driver
+        log
+)
